@@ -1,0 +1,24 @@
+<h1 style="color: blue; margin-left: 50px;font-weight: bolder;">Angular Tic-Tac-Toe-Game</h1>
+<h1 style="color: blue;">Current Player: {{ Player }} </h1>
+
+<button nbButton outline status="danger" style="background-color:#87CEEB; margin-left: 460px;" (click)="newGame()">Start new Game</button>
+
+
+<h2 *ngIf="winner">
+    Player {{ winner }} won the game!
+</h2>
+
+<div class="Imageboy"><img src="../assets/OIP.jpg" alt="" class="image"></div>
+
+
+
+<main style="margin-left: 460px; margin-bottom: 1000px;">
+    
+    <app-square 
+        *ngFor="let val of squares; let i = index" 
+        [value]="val"
+        (click)="makeMove(i)" style="display: flexbox; text-align: center; background-color: blueviolet;" > 
+
+    </app-square>
+    
+</main>
